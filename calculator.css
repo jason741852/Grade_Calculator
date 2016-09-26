@@ -91,6 +91,12 @@ button{
   font-size: 16px;
   border-radius: 5px;
 }
+button.red{
+  background-color: #B5111A;
+}
+button.yellow{
+  background-color: #ffff00;
+}
 
 div.button{
   margin-right: 10%;
