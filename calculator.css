@@ -1,0 +1,103 @@
+h1{
+  color: black;
+  font-family: arial;
+  margin-left: 25px;
+}
+
+p.redLine{
+  color: #B92A2C;
+  font-family: arial;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+p.blackLine{
+  color: black;
+  font-family: arial;
+  margin-left: 10px;
+}
+
+tr{
+  color: black;
+  font-family: arial;;
+}
+
+tr.head{
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    background-color:
+}
+table, th, td {
+  margin-left: 1%;
+  margin-right: 2%;
+  border: 1.5px solid #BBBBBB;
+}
+div.buttom {
+  background-color: white;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+th {
+  background-color: #D4D7D8;
+  text-align: left;
+  padding: 2px;
+
+}
+
+td{
+  padding: 15px;
+  width: 180px;
+}
+
+input {
+    width: 50%;
+    height: 60%;
+    border: 1px solid #BBBBBB;
+}
+
+br.inputBorder{
+  margin-bottom: 11px;
+};
+
+div.moreMargin{
+  margin-left: 25px;
+}
+
+div.white{
+  background-color: gray;
+}
+
+div.green{
+  background-color: #E9EFF1;
+  border: 1.5px solid #BBBBBB;
+  margin-left: 3%;
+  margin-right: 10%;
+}
+
+br.blackbg{
+  background-color:#393633;
+}
+
+button{
+  background-color: #B5111A;
+  color: white;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+div.button{
+  margin-right: 10%;
+  margin-bottom: 2%;
+}
+
+
+html{
+  background-color: #a6192e;
+}

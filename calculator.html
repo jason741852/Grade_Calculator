@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<title>Grade Calculator</title>
+
+<div class="buttom">
+<head>
+  <script src="calculator.js" type="text/javascript"></script>
+  <link href="calculator.css" rel="stylesheet" type="text/css">
+  <br>
+  <h1>Grade Calculator</h1>
+</head>
+<div class="green">
+<body>
+  <div class="moreMargin">
+  <p class="redLine">Activities</p>
+  <p class="blackLine">Give grades to the numeric activities:</p>
+
+
+  <table>
+    <tr class="head">
+      <th>Name</th>
+      <th>Short Name</th>
+      <th>Weight</th>
+      <th>Grade</th>
+      <th>Percent</th>
+    </tr>
+    <tr>
+      <td>Activity 1</td>
+      <td>A1</td>
+      <td><input type="number" id="weight0" name="weight"></td>
+      <td><input type="number" id="gradeNum0" name="gradeNum" oninput="percentageCalculate(gradeNum0,gradeDen0,0)"> /<br class="inputBorder">
+          <input type="number" id="gradeDen0" name="gradeDen" oninput="percentageCalculate(gradeNum0,gradeDen0,0)"></td>
+      <td id="box0" name="percent"></td>
+    </tr>
+    <tr>
+      <td>Activity 2</td>
+      <td>A2</td>
+      <td><input type="number" id="weight1" name="weight"></td>
+      <td><input type="number" id="gradeNum1" name="gradeNum" oninput="percentageCalculate(gradeNum1,gradeDen1,1)"> /<br class="inputBorder">
+          <input type="number" id="gradeDen1" name="gradeDen" oninput="percentageCalculate(gradeNum1,gradeDen1,1)"></td>
+      <td id="box1" name="percent"></td>
+    </tr>
+    <tr>
+      <td>Activity 3</td>
+      <td>A3</td>
+      <td><input type="number" id="weight2" name="weight"></td>
+      <td><input type="number" id="gradeNum2" name="gradeNum" oninput="percentageCalculate(gradeNum2,gradeDen2,2)"> /<br class="inputBorder">
+          <input type="number" id="gradeDen2" name="gradeDen" oninput="percentageCalculate(gradeNum2,gradeDen2,2)"></td>
+      <td id="box2" name="percent"></td>
+    </tr>
+    <tr>
+      <td>Activity 4</td>
+      <td>A4</td>
+      <td><input type="number" id="weight3" name="weight"></td>
+      <td><input type="number" id="gradeNum3" name="gradeNum" oninput="percentageCalculate(gradeNum3,gradeDen3,3)"> /<br class="inputBorder">
+          <input type="number" id="gradeDen3" name="gradeDen" oninput="percentageCalculate(gradeNum3,gradeDen3,3)"></td>
+      <td id="box3" name="percent"></td>
+    </tr>
+  </table>
+
+  <p class="redLine">Result</p>
+  <p id="weight"></p>
+  <p id="mean"></p>
+  <div class="button" align="right">
+  <button type="button" onclick="weightedGrade()">WEIGHTED</button>
+  <button type="button" onclick="meanGrade()">MEAN</button>
+  </div>
+
+  </div>
+  </div>
+  <br>
+  <br>
+  </div>
+  <br>
+
+</body>
+
+</html>
