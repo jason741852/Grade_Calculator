@@ -3,6 +3,20 @@ h1{
   font-family: arial;
   margin-left: 25px;
 }
+div.blackTop{
+  padding-top: 20px;
+  background-color:#3B3734;
+  margin-top: -0.5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+div.blackDown{
+  padding-top: 40px;
+  background-color:#3B3734;
+  margin-bottom:5%;
+
+}
 
 p.redLine{
   color: #B92A2C;
@@ -33,11 +47,11 @@ table {
     background-color:
 }
 table, th, td {
-  margin-left: 1%;
-  margin-right: 2%;
+  margin-left: 10px;
+  margin-right: 10px;
   border: 1.5px solid #BBBBBB;
 }
-div.buttom {
+div.bottom {
   background-color: white;
   margin-left: 2.5%;
   margin-right: 2.5%;
@@ -76,14 +90,16 @@ div.white{
 div.green{
   background-color: #E9EFF1;
   border: 1.5px solid #BBBBBB;
-  margin-left: 3%;
+  margin-left: 25px;
   margin-right: 10%;
 }
 
 br.blackbg{
   background-color:#393633;
 }
-
+div.addDelButtons{
+  margin-left: 10px;
+}
 button{
   background-color: #B5111A;
   color: white;
@@ -95,7 +111,7 @@ button.red{
   background-color: #B5111A;
 }
 button.yellow{
-  background-color: #ffff00;
+  background-color: #e5ca02;
 }
 
 div.button{
@@ -103,6 +119,9 @@ div.button{
   margin-bottom: 2%;
 }
 
+p.messeges{
+  font-family: arial;
+}
 
 html{
   background-color: #a6192e;

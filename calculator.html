@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <title>Grade Calculator</title>
-
-<div class="buttom">
+<div class="blackTop">
+</div>
+<div class="bottom">
     <head>
+      <meta name="description" content="grade calculator">
+      <meta name="author" content="Jason Chan ksc19@sfu.ca">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="calculator.js" type="text/javascript"></script>
       <link href="calculator.css" rel="stylesheet" type="text/css">
       <br>
@@ -30,7 +34,7 @@
                   <td><input type="number" id="weight0" name="weight"></td>
                   <td><input type="number" id="gradeNum0" name="gradeNum" oninput="percentageCalculate(gradeNum0,gradeDen0,0)"> /<br class="inputBorder">
                       <input type="number" id="gradeDen0" name="gradeDen" oninput="percentageCalculate(gradeNum0,gradeDen0,0)"></td>
-                  <td id="box0" name="percent"></td>
+                  <td id="box0" class="percent"></td>
                 </tr>
                 <tr>
                   <td>Activity 2</td>
@@ -38,7 +42,7 @@
                   <td><input type="number" id="weight1" name="weight"></td>
                   <td><input type="number" id="gradeNum1" name="gradeNum" oninput="percentageCalculate(gradeNum1,gradeDen1,1)"> /<br class="inputBorder">
                       <input type="number" id="gradeDen1" name="gradeDen" oninput="percentageCalculate(gradeNum1,gradeDen1,1)"></td>
-                  <td id="box1" name="percent"></td>
+                  <td id="box1" class="percent"></td>
                 </tr>
                 <tr>
                   <td>Activity 3</td>
@@ -46,7 +50,7 @@
                   <td><input type="number" id="weight2" name="weight"></td>
                   <td><input type="number" id="gradeNum2" name="gradeNum" oninput="percentageCalculate(gradeNum2,gradeDen2,2)"> /<br class="inputBorder">
                       <input type="number" id="gradeDen2" name="gradeDen" oninput="percentageCalculate(gradeNum2,gradeDen2,2)"></td>
-                  <td id="box2" name="percent"></td>
+                  <td id="box2" class="percent"></td>
                 </tr>
                 <tr>
                   <td>Activity 4</td>
@@ -54,13 +58,19 @@
                   <td><input type="number" id="weight3" name="weight"></td>
                   <td><input type="number" id="gradeNum3" name="gradeNum" oninput="percentageCalculate(gradeNum3,gradeDen3,3)"> /<br class="inputBorder">
                       <input type="number" id="gradeDen3" name="gradeDen" oninput="percentageCalculate(gradeNum3,gradeDen3,3)"></td>
-                  <td id="box3" name="percent"></td>
+                  <td id="box3" class="percent"></td>
                 </tr>
               </table>
+              <div class="addDelButtons">
+                <button class="red" type="button" id="addRowButton" onclick="addRow()">Add Row</button>
+                <button class="red" type="button" id="delRowButton" onclick="delRow()">Delete Row</button>
+              </div>
 
               <p class="redLine">Result</p>
-              <p id="weight"></p>
-              <p id="mean"></p>
+              <div class="addDelButtons">
+                <p class="messeges" id="weight"></p>
+                <p class="messeges" id="mean"></p>
+              </div>
               <div class="button" align="right">
                   <button class="red" type="button" id="wgButton" onclick="weightedGrade()">WEIGHTED</button>
                   <button class="red" type="button" id="meanButton" onclick="meanGrade()">MEAN</button>
@@ -68,11 +78,10 @@
 
           </div>
       </div>
-      <br>
-      <br>
 
 <br>
-
-    </body>
+<div class="blackDown">
+</div>
+</body>
 </div>
 </html>

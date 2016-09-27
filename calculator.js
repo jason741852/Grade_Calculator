@@ -1,46 +1,59 @@
 function addRow(){
-  var rowCount = $('#gradeTable').length;
-  $('#gradeTable').append(rowCellBuilder(rowCount+1));
+    console.log("b4 percent number: " + document.getElementsByClassName("percent").length);
+  var table = document.getElementById("gradeTable");
+  var rowCount = table.getElementsByTagName("tr").length;
+  var A = rowCount;//for frontend labelling
+  rowCount--;
+  console.log("Row Count: " + rowCount);
+  var row = table.insertRow(-1);
+  row.insertCell(0).innerHTML = "Activity " + A;
+  row.insertCell(1).innerHTML = "A" + A;
+  row.insertCell(2).innerHTML = '<input type="number" id="weight' + rowCount + '" name="weight">';
+  row.insertCell(3).innerHTML = '<input type="number" id="gradeNum' + rowCount + '" name="gradeNum" oninput="percentageCalculate(gradeNum' + rowCount + ',gradeDen' + rowCount + ',' + rowCount + ')"> /<br class="inputBorder"><input type="number" id="gradeDen' + rowCount + '" name="gradeDen" oninput="percentageCalculate(gradeNum' + rowCount + ',gradeDen' + rowCount + ',' + rowCount + ')">';
+  var percent = row.insertCell(4);
+  percent.id ='box'+ rowCount;
+  percent.className = "percent";
+  console.log("percent number: " + document.getElementsByClassName("percent").length);
 }
 
-function rowCellBuilder(ii){
-  var str1 = '<tr><td>Activity';
-  var str2 = '</th><td>A';
-  var str3 = '</td><td><input type="number" id="gradeNum"';
-  var str4 = '" name="gradeDen" oninput="percentageCalculate(gradeNum';
-  var str5 = ',gradeDen';
-  var str6 = ',';
-  var str7 = ')"> /<br class="inputBorder">'
+function delRow(){
+    var rowCount = document.getElementById("gradeTable").getElementsByTagName("tr").length;
+    rowCount--;
+
+    if (rowCount <= 1)
+    {
+      document.getElementById("delRowButton").className = 'yellow';
+      setTimeout(function(){document.getElementById("delRowButton").className = 'red'},1000);
+      alert("The must be at least 1 activity in your class!");
+    }
+    else
+    {
+      document.getElementById("gradeTable").deleteRow(-1);
+    }
 }
-
-
 
 
 function percentageCalculate(score,total,box){
+  console.log("problem cell: " + box);
   var x = score.value;
   var y = total.value;
   var z = x/y*100;
   z = z.toFixed(2);
 
-  for (i=0; i<4;i++){
-    if(i==box)
-    {
-      if(x=="" || y=="")
-      {
-        document.getElementsByName("percent")[i].innerHTML = "";
-        return 2; // indicator for mean and weightedGrade that this input is not filled
-      }
-      else if(z<=100 && z>=0)
-      {
-        document.getElementsByName("percent")[i].innerHTML = z + "%";
-        return x/y;
-      }
-      else
-      {
-        document.getElementsByName("percent")[i].innerHTML = "Illegal Grade";
-        return 3; // indicator for mean and weightedGrade that this is illegal
-      }
-    }
+  if(x=="" || y=="")
+  {
+    document.getElementsByClassName("percent")[box].innerHTML = "";
+    return 2; // indicator for mean and weightedGrade that this input is not filled
+  }
+  else if(z<=100 && z>=0)
+  {
+    document.getElementsByClassName("percent")[box].innerHTML = z + "%";
+    return x/y;
+  }
+  else
+  {
+    document.getElementsByClassName("percent")[box].innerHTML = "Illegal Grade";
+    return 3; // indicator for mean and weightedGrade that this is illegal
   }
 }
 
@@ -48,7 +61,9 @@ function weightedGrade(){
   var grade = 0;
   var weightGrade = 0;
   var weightCounter = 0;
-  for (i=0;i<4;i++)
+  var rowCount = document.getElementById("gradeTable").getElementsByTagName("tr").length;
+  rowCount--;
+  for (i=0;i<rowCount;i++)
   {
     grade = percentageCalculate(document.getElementsByName("gradeNum")[i], document.getElementsByName("gradeDen")[i], i);
     weight = document.getElementsByName("weight")[i].value;
@@ -100,7 +115,10 @@ function meanGrade(){
   var grade = 0;
   var mean = 0;
   var actitivtiesCounter = 0;
-  for (i=0;i<4;i++)
+  var rowCount = document.getElementById("gradeTable").getElementsByTagName("tr").length;
+  rowCount--;
+
+  for (i=0;i<rowCount;i++)
   {
     console.log("i=" +i);
     grade = percentageCalculate(document.getElementsByName("gradeNum")[i], document.getElementsByName("gradeDen")[i], i);
@@ -132,7 +150,3 @@ function meanGrade(){
   console.log("no errors");
   document.getElementById("mean").innerHTML="Mean Grade: " + mean + "%";
 }
-
-// function changeButtonColorBack(buttonName){
-//   document.getElementById(buttonName).className = 'red';
-// }
