@@ -1,3 +1,21 @@
+function addRow(){
+  var rowCount = $('#gradeTable').length;
+  $('#gradeTable').append(rowCellBuilder(rowCount+1));
+}
+
+function rowCellBuilder(ii){
+  var str1 = '<tr><td>Activity';
+  var str2 = '</th><td>A';
+  var str3 = '</td><td><input type="number" id="gradeNum"';
+  var str4 = '" name="gradeDen" oninput="percentageCalculate(gradeNum';
+  var str5 = ',gradeDen';
+  var str6 = ',';
+  var str7 = ')"> /<br class="inputBorder">'
+}
+
+
+
+
 function percentageCalculate(score,total,box){
   var x = score.value;
   var y = total.value;
